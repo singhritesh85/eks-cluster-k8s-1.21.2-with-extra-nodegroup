@@ -1,0 +1,17 @@
+---
+# vars file for extra-nodegroup
+
+cluster_name: "test"
+nodegroup_name: "test-nodegroup2"
+region: "us-east-2"
+node_type: "t3.medium"
+number_of_nodes: "3"
+nodes_min: "1"
+nodes_max: "4"
+node_volume_size: "20"
+node_volume_type: "gp2"
+max_pods_per_node: "20"
+ssh_public_key: "~/.ssh/id_rsa.pub"
+node_ami_family: "Ubuntu2004"
+node_zones: "us-east-2a,us-east-2b,us-east-2c"
+cfn_role_arn: "" ## IAM role used by CloudFormation to call AWS API on your behalf

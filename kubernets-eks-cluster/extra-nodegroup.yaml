@@ -1,0 +1,6 @@
+---
+- name: create kubernetes extra nodegroup using eksctl
+  hosts: localhost
+  connection: local
+  roles:
+  - extra-nodegroup

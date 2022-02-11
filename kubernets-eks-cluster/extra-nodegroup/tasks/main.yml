@@ -1,0 +1,11 @@
+---
+# tasks file for extra-nodegroup
+
+- name: create extra nodegroup
+  shell: "eksctl create nodegroup --cluster={{ cluster_name }} --name={{ nodegroup_name }} --region={{ region }} --node-type={{ node_type }} --nodes={{ number_of_nodes }} --nodes-min={{ nodes_min }} --nodes-max={{ nodes_max }} --max-pods-per-node={{ max_pods_per_node }}  --node-volume-size={{ node_volume_size }} --node-volume-type={{ node_volume_type }} --ssh-public-key={{ ssh_public_key }} --node-ami-family={{ node_ami_family }} --node-zones={{ node_zones }}"  ##  --cfn-role-arn={{ cfn_rile_arn }} --node-ami={{ node_ami }}
+
+- name: Verify that all Kubernetes nodes are ready
+  shell: kubectl get nodes
+  register: extra_nodegroup
+
+- debug: msg="{{ extra_nodegroup.stdout }}"
