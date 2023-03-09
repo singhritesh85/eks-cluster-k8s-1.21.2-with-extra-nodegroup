@@ -11,6 +11,10 @@ example:-  eksctl scale nodegroup --name=test-nodegroup2 --cluster=test --nodes=
            eksctl scale nodegroup --name=test-nodegroup2 --cluster=test --nodes=4 --region=us-east-2 --nodes-min=2 --nodes-max=5
 
 
+  
+  
+  
+  
 
 ```
 For Any New kubernetes version just update eksctl version and kubernetes version in the script
